@@ -21,22 +21,25 @@ def clear():
   else:
   # for windows platfrom
     _ = os.system('cls')
-
+    
 ###
 
-# # reset wiki
+# reset wiki
 # db["usernames"] = [""]
 # db["passwords"] = [""]
-# db["pages"] = []
+# db["pages"] = ["ech0by"]
+# db["page_info"] = [""]
 # db["edits"] = 0
+
+
 while(1):
   clear()
   user = ""
   uinput = ""
-  while uinput not in ["y", "n"]:
+  while uinput not in ["r", "l"]:
     uinput = input("~ ~ ~ ~ -  PyWiki - ~ ~ ~ ~\n"+str(len(db["usernames"])-1)+" users - "+str(len(db["pages"]))+" pages - "+str(db["edits"])+" edits\n\nType \"l\" for login and \"r\" for register\n")
     clear()
-  if uinput == "n":
+  if uinput == "r":
     temp1 = ""
     while temp1 in db["usernames"]:
       clear()
@@ -54,7 +57,7 @@ while(1):
     print("Registered!")
     uinput = ""
   
-  if uinput == "y":
+  if uinput == "l":
     clear()
     uinput = "s̷̡̟͈͕̯̘̙̙̣̼̰͔̫͍͖̻̱̜̗̹̰̩̒̎̀ͅ"
     while(uinput not in db["usernames"]):
@@ -71,9 +74,19 @@ while(1):
       loggedUser = user
       userNum = db["usernames"].index(loggedUser)
   try:
+    clear()
+    print("Logged in as " + loggedUser+"\n\n")
     while(1):
-        clear()
-        print("Logged in as " + loggedUser)
+      clear()
+      uinput = input("~ ~ ~ ~ -  PyWiki - ~ ~ ~ ~\n"+str(len(db["usernames"])-1)+" users - "+str(len(db["pages"]))+" pages - "+str(db["edits"])+" edits\n\n1. Wiki Catalog\n")
+      if uinput in ["1"]:
+        if uinput == "1":
+          clear()
+          counter = 0
+          for i in db["pages"]:
+            print(str(counter)+". "+i)
+            counter+=1
+          input("Press [ENTER] to continue.")
 
 
 

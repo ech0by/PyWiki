@@ -68,6 +68,7 @@ while(1):
     clear()
     uinput = "s̷̡̟͈͕̯̘̙̙̣̼̰͔̫͍͖̻̱̜̗̹̰̩̒̎̀ͅ"
     while(uinput not in db["usernames"]):
+      clear()
       uinput = input("Username: ")
     user = uinput
     uinput = input("Password: ")
@@ -89,8 +90,8 @@ while(1):
       # main loop
       clear()
       # input/main menu
-      uinput = input("~ ~ ~ ~ -  PyWiki - ~ ~ ~ ~\n"+str(len(db["usernames"])-1)+" users - "+str(len(db["pages"]))+" pages - "+str(db["edits"])+" edits\n\n1. Wiki Catalog\n")
-      if uinput in ["1"]:
+      uinput = input("~ ~ ~ ~ -  PyWiki - ~ ~ ~ ~\n"+str(len(db["usernames"])-1)+" users - "+str(len(db["pages"]))+" pages - "+str(db["edits"])+" edits\nType \"cancel\" at any time to return here.\n\n1. Wiki Catalog\n2. Open a page\n\n")
+      if uinput in ["1", "2"]:
         # catalog
         if uinput == "1":
           clear()
@@ -98,7 +99,29 @@ while(1):
           for i in db["pages"]:
             print(str(counter)+". "+i)
             counter+=1
-          input("Press [ENTER] to continue.")
+          input("Press [ENTER] to continue.\n")
+        # open a page
+        if uinput == "2":
+          uinput = ""
+          while uinput not in ["n","i","cancel"]:
+            clear()
+            uinput = input("Open from page name or id? (n/i)\n")
+
+          if uinput == "n":
+            uinput = ""
+            while uinput not in db["pages"]:
+              clear()
+              uinput = input("Enter page name: ")
+              if uinput == "cancel":
+                break
+            id = db["pages"].index(uinput)
+
+
+          clear()
+          input(db["pages"][id]+"\n\n"+db["page_info"][id]+"\n\nPress [ENTER] to continue.")
+            
+          
+          
 
 
 

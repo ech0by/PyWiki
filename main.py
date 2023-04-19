@@ -6,8 +6,8 @@ import time
 
 ###
 
-# Read README.md
-# GPL v3 License
+# Read the README.md
+# MIT License
 
 ###
 

@@ -2,7 +2,7 @@
 ### A Replit hosted Python based Wiki service.
 
 ## Features
-1. Open Source GPL v3
+1. Open Source MIT License
 2. Register and login to accounts (Greenlit)
 3. Add pages (Greenlit)
 4. Edit pages (Coming soon...)

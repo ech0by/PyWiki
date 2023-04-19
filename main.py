@@ -27,19 +27,25 @@ def clear():
 # reset wiki
 # db["usernames"] = [""]
 # db["passwords"] = [""]
-# db["pages"] = ["ech0by"]
+# db["pages"] = [""]
 # db["page_info"] = [""]
+# db["page_type"] = []
 # db["edits"] = 0
 
+###
 
+# forever loop
 while(1):
+  # print login page
   clear()
   user = ""
   uinput = ""
   while uinput not in ["r", "l"]:
     uinput = input("~ ~ ~ ~ -  PyWiki - ~ ~ ~ ~\n"+str(len(db["usernames"])-1)+" users - "+str(len(db["pages"]))+" pages - "+str(db["edits"])+" edits\n\nType \"l\" for login and \"r\" for register\n")
     clear()
+  # check input
   if uinput == "r":
+    # account creation
     temp1 = ""
     while temp1 in db["usernames"]:
       clear()
@@ -58,6 +64,7 @@ while(1):
     uinput = ""
   
   if uinput == "l":
+    # login
     clear()
     uinput = "s̷̡̟͈͕̯̘̙̙̣̼̰͔̫͍͖̻̱̜̗̹̰̩̒̎̀ͅ"
     while(uinput not in db["usernames"]):
@@ -69,17 +76,22 @@ while(1):
       #print(uinput j+ " /// " + db["passwords"][db["usernames"].index(user)] + " /// " +user)
       quit()
     else:
+      # logged in
       clear()
       print("Logged in as " + user)
       loggedUser = user
       userNum = db["usernames"].index(loggedUser)
   try:
+    # announce login
     clear()
     print("Logged in as " + loggedUser+"\n\n")
     while(1):
+      # main loop
       clear()
+      # input/main menu
       uinput = input("~ ~ ~ ~ -  PyWiki - ~ ~ ~ ~\n"+str(len(db["usernames"])-1)+" users - "+str(len(db["pages"]))+" pages - "+str(db["edits"])+" edits\n\n1. Wiki Catalog\n")
       if uinput in ["1"]:
+        # catalog
         if uinput == "1":
           clear()
           counter = 0

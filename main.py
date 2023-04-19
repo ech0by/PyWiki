@@ -6,6 +6,11 @@ import time
 
 ###
 
+# Read README.md
+# GPL v3 License
+
+###
+
 def sleep(seconds):
   time.sleep(seconds)
 

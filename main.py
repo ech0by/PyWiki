@@ -30,7 +30,7 @@ def clear():
 # db["pages"] = [""]
 # db["page_info"] = [""]
 # db["page_type"] = []
-# db["edits"] = 0
+# db["edits"] = 1
 
 ###
 
@@ -73,8 +73,6 @@ while(1):
     user = uinput
     uinput = input("Password: ")
     if uinput != db["passwords"][db["usernames"].index(user)]:
-      # # debug print password and user
-      #print(uinput j+ " /// " + db["passwords"][db["usernames"].index(user)] + " /// " +user)
       quit()
     else:
       # logged in
@@ -112,13 +110,11 @@ while(1):
             while uinput not in db["pages"]:
               clear()
               uinput = input("Enter page name: ")
-              if uinput == "cancel":
-                break
             id = db["pages"].index(uinput)
-
-
-          clear()
-          input(db["pages"][id]+"\n\n"+db["page_info"][id]+"\n\nPress [ENTER] to continue.")
+            
+          if uinput != "cancel":
+            clear()
+            input(db["pages"][id]+"\n\n"+db["page_info"][id]+"\n\nPress [ENTER] to continue.")
             
           
           
